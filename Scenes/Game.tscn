@@ -32,6 +32,7 @@ __meta__ = {
 script = ExtResource( 6 )
 
 [node name="Timer" type="Timer" parent="Bullets"]
+autostart = true
 
 [node name="Enemy Bullets" type="Node2D" parent="."]
 

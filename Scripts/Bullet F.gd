@@ -8,7 +8,7 @@ func _ready():
 	contact_monitor = true
 	set_max_contacts_reported(4)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var colliding = get_colliding_bodies()
 	for c in colliding:
 		if c.name != "Bullet_F":

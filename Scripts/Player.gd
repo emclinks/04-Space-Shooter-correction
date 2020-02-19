@@ -9,9 +9,9 @@ export var acceleration = 0.4
 var velocity = Vector2(0,0)
 
 onready var VP = get_viewport_rect().size
-onready var Bullet_F = load("res://Scenes/Bullet_F.tscn")
+onready var Bullet_F = load("res://Scenes/Bullet F.tscn")
 
-signal healh_changed
+signal healh_changed 
 signal score_changed
 
 func _ready():
