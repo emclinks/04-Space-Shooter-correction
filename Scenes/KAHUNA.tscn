@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/KAHUNA.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Meteorites/Kahuna.png" type="Texture" id=2]
+
+[node name="KAHUNA" type="RigidBody2D"]
+position = Vector2( 1287.45, -62.3068 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -1.23615, 1.04541 )
+rotation = -0.218614
+scale = Vector2( 2.35749, 2.32969 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+position = Vector2( -1.23615, 1.04541 )
+rotation = -0.218614
+scale = Vector2( 2.35749, 2.32969 )
+polygon = PoolVector2Array( 56, -27.4, 56, -24.7, 43.5, 16, 40.1, 16, -9, 29.5, -26.7, 44.3, -29, 43.3, -29, 42, -51, 26, -51, 23.3, -56.4, -8, -54.2, -8, -38.2, -38, -33.3, -38, 3, -43.7, 3, -45.8 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 46.681
+autostart = true
+[connection signal="ready" from="Timer" to="." method="_on_Timer_ready"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
