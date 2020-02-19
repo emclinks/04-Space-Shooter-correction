@@ -4,7 +4,7 @@ export var health = 100
 export var score = 0
 export var margin = 5
 export var y_range = 300
-export var acceleration = 0.3
+export var acceleration = 0.4
 
 var velocity = Vector2(0,0)
 

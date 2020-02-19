@@ -1,6 +1,6 @@
 extends Node2D
 
-var ready = true
+var ready = false
 onready var default_timer = $Timer.wait_time
 
 var Bullet_F = load("res://Scenes/Bullet_F.tscn")
