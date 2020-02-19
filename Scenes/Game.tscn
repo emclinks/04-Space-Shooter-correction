@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scripts/Meteors.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Enemy/enemy captain.png" type="Texture" id=2]
@@ -8,9 +8,13 @@
 [ext_resource path="res://Scripts/Bullets.gd" type="Script" id=6]
 [ext_resource path="res://Scripts/HUD.gd" type="Script" id=7]
 [ext_resource path="res://Assets/Enemy/Enemy Bullet.png" type="Texture" id=8]
+[ext_resource path="res://Scripts/Captain.gd" type="Script" id=9]
 [ext_resource path="res://Assets/Enemy/enemy hauler.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Enemy/Shiny Boss.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Enemy/enemy assault.png" type="Texture" id=12]
+[ext_resource path="res://Scripts/Boss.gd" type="Script" id=13]
+[ext_resource path="res://Scripts/Hauler.gd" type="Script" id=14]
+[ext_resource path="res://Scripts/Assault.gd" type="Script" id=15]
 
 [node name="Game" type="Node2D"]
 
@@ -66,54 +70,57 @@ script = ExtResource( 1 )
 autostart = true
 
 [node name="Enemies" type="Node2D" parent="."]
-visible = false
 position = Vector2( 498.813, -128.518 )
 
-[node name="Enemy 1" type="KinematicBody2D" parent="Enemies"]
+[node name="Assault" type="KinematicBody2D" parent="Enemies"]
+script = ExtResource( 15 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Assault" type="Sprite" parent="Enemies/Enemy 1"]
+[node name="Assault" type="Sprite" parent="Enemies/Assault"]
 texture = ExtResource( 12 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Enemies/Enemy 1"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Enemies/Assault"]
 visible = false
 polygon = PoolVector2Array( 48.5, -23.2, 34, 30, 32.9, 30, 30.9, 35, 27.6, 35, 21.5, 36.5, 21.5, 38.7, 19, 42, -18.8, 42, -21.6, 37, -26.1, 37, -34.5, 31, -34.5, 27.3, -48.5, -19.1, -48.5, -42, -23, -42, -10.5, -35.2, -10.5, -33.6, -9.4, -32, 7.5, -32, 21.1, -42, 48.5, -42 )
 
-[node name="Enemy 2" type="KinematicBody2D" parent="Enemies"]
+[node name="Hauler" type="KinematicBody2D" parent="Enemies"]
+script = ExtResource( 14 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Hauler" type="Sprite" parent="Enemies/Enemy 2"]
+[node name="Hauler" type="Sprite" parent="Enemies/Hauler"]
 position = Vector2( -164.221, 11.9968 )
 scale = Vector2( 1.09675, 1.09675 )
 texture = ExtResource( 10 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Enemies/Enemy 2"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Enemies/Hauler"]
 visible = false
 position = Vector2( -164.221, 11.9968 )
 scale = Vector2( 1.09675, 1.09675 )
 polygon = PoolVector2Array( 41, -36.7, 41, 27, 20, 39.1, 18.4, 42, -18.6, 42, -21.9, 38, -23.5, 38, -41, 27.7, -41, -36, -30.2, -42, -1, -42, -1, -40.3, -0.599998, -39, 0, -39, 0, -41.9, 1.3, -42, 30.4, -42 )
 
-[node name="Enemy 3" type="KinematicBody2D" parent="Enemies"]
+[node name="Captain" type="KinematicBody2D" parent="Enemies"]
+script = ExtResource( 9 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Captain" type="Sprite" parent="Enemies/Enemy 3"]
+[node name="Captain" type="Sprite" parent="Enemies/Captain"]
 position = Vector2( 467.125, -3.96671 )
 scale = Vector2( 0.829273, 0.905555 )
 texture = ExtResource( 2 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Enemies/Enemy 3"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Enemies/Captain"]
 visible = false
 position = Vector2( 467.125, -3.96671 )
 scale = Vector2( 0.829273, 0.905555 )
 polygon = PoolVector2Array( 19, -36.4, 19, -34.9, 35.9, -19, 47.3, -19, 52, -17.4, 52, -2.8, 26.3, 42, 6.7, 42, 4, 37.6, 4, 31.8, 4.5, 29, -5, 29, -5, 32.2, -7, 42, -26, 42, -51, 1.6, -51, -0.299999, -52, -1.6, -52, -16, -47.7, -19, -35.5, -19, -35, -19.2, -35, -20, -21, -31, -21, -33.8, -17.8, -37, -15.4, -37, -4.4, -42, 3.8, -42 )
 
 [node name="BOSS" type="KinematicBody2D" parent="Enemies"]
+script = ExtResource( 13 )
 __meta__ = {
 "_edit_group_": true
 }

@@ -11,12 +11,13 @@ func _ready():
 func _physics_process(delta):
 	var colliding = get_colliding_bodies()
 	for c in colliding:
-		var explosion = Explosion.instance()
-		explosion.position = position
-		explosion.get_node("Sprite").playing = true
-		get_node("/root/Game/Explosions").add_child(explosion)
-		if c.get_parent().name == "Enemies":
-			Player.change_score(c.score)
+		if c.name != "Bullet_F":
+			var explosion = Explosion.instance()
+			explosion.position = position
+			explosion.get_node("Sprite").playing = true
+			get_node("/root/Game/Explosions").add_child(explosion)
+			if c.get_parent().name == "Enemies":
+				Player.change_score(c.score)
 		queue_free()
 
 func _integrate_forces(state):

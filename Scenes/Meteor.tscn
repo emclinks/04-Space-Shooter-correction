@@ -5,6 +5,8 @@
 
 [node name="Grey" type="RigidBody2D"]
 position = Vector2( 774.839, -162.846 )
+collision_layer = 4
+collision_mask = 7
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
