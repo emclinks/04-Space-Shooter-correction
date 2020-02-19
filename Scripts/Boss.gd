@@ -19,6 +19,9 @@ func _ready():
 	randomize()
 	get_new_position()
 
+func die():
+	queue_free()
+
 func _physics_process(delta):
 	if ready:
 		$Tween.start()

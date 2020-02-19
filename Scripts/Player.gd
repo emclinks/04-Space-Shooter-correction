@@ -31,7 +31,7 @@ func changed_score(s):
 func die():
 	queue_free()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if Input.is_action_pressed("Fire"):
 		var b = Bullet_F.instance()
 		b.position = position
@@ -60,4 +60,4 @@ func _physics_process(delta):
 		velocity.y = 0
 		position.y = VP.y - margin
 		
-	var collision = move_and_collide(velocity)
+	var _collision = move_and_collide(velocity)

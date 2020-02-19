@@ -15,7 +15,7 @@ func _ready():
 	set_max_contacts_reported(4)
 	linear_velocity = velocity
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var colliding = get_colliding_bodies()
 	for c in colliding:
 		var explosion = Explosion.instance()
@@ -29,6 +29,6 @@ func _physics_process(delta):
 	if position.y > get_viewport_rect().size.y + 50:
 		queue_free()
 
-func _integrate_forces(state):
+func _integrate_forces(_state):
 	#state.set_linear_velocity(velocity)
 	pass

@@ -3,7 +3,10 @@ extends KinematicBody2D
 export var limit_y = 350
 export var score = 35
 export var speed = 1
-export var move_probability = 0.075
+export var move_probability = 0.05
+export var fire_probability = 0.5
+
+onready var EnemyBullet = load("res://Scenes/EnemyBullet.tscn")
 
 var ready = false
 var new_position = Vector2(0,0)
@@ -19,7 +22,10 @@ func _ready():
 	randomize()
 	get_new_position()
 
-func _physics_process(delta):
+func die():
+	queue_free()
+
+func _physics_process(_delta):
 	if ready:
 		$Tween.start()
 		ready = false
@@ -27,3 +33,8 @@ func _physics_process(delta):
 func _on_Timer_timeout():
 	if randf() < move_probability:
 		get_new_position()
+	if randf() < fire_probability:
+		var b = EnemyBullet.instance()
+		b.position = position
+		b.position.y += 25
+		get_node("/root/Game/Enemy Bullets").add_child(b)
