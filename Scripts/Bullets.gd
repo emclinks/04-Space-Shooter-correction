@@ -6,8 +6,10 @@ onready var default_timer = $Timer.wait_time
 var Bullet_F = load("res://Scenes/Bullet F.tscn")
 
 func _ready():
+	pass
+
+func fire(b):
 	if ready:
-		var b = Bullet_F.instance()
 		add_child(b)
 		ready = false
 		$Timer.start()

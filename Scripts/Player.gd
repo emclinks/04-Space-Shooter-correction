@@ -15,12 +15,13 @@ signal healh_changed
 signal score_changed
 
 func _ready():
-	emit_signal("health_changed")
+	emit_signal("healh_changed")
 	emit_signal("score_changed")
 
-func changed_health(h):
+func change_health(h):
 	health += h
-	emit_signal("health_changed")
+	print(health)
+	emit_signal("healh_changed")
 	if health <= 0:
 		die()
 

@@ -4,8 +4,6 @@
 [ext_resource path="res://Assets/Player/player_phaser.png" type="Texture" id=2]
 
 [node name="Bullet F" type="RigidBody2D"]
-visible = false
-position = Vector2( 554.952, 813.115 )
 collision_layer = 2
 collision_mask = 12
 mode = 1
@@ -17,12 +15,9 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -4.31223, -18.9074 )
 scale = Vector2( 0.336581, 0.336581 )
 texture = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-visible = false
-position = Vector2( -4.31223, -18.9074 )
 scale = Vector2( 0.336581, 0.336581 )
 polygon = PoolVector2Array( 6.5, -27.9, 6.5, 27.7, 5.9, 28.5, -5.7, 28.5, -6.5, 27.9, -6.5, -27.9, -5.6, -28.5, 5.6, -28.5 )

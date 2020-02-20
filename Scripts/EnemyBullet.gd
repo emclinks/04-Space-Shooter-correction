@@ -26,5 +26,5 @@ func _physics_process(_delta):
 
 
 func _integrate_forces(state):
-	state.set_linear_velocity(Vector2(0,-speed))
+	state.set_linear_velocity(Vector2(0,speed))
 	state.set_angular_velocity(0)

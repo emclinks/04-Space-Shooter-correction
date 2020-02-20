@@ -4,6 +4,7 @@ func _ready():
 	pass
 
 func _on_Player_healh_changed():
+	print("health")
 	var h = get_node("/root/Game/Player").health
 	$Health.text = "Health: " + str(h)
 
