@@ -12,14 +12,14 @@ func _ready():
 func _physics_process(_delta):
 	var colliding = get_colliding_bodies()
 	for c in colliding:
-		if c.name != "Bullet_F":
+		if c.name != "Bullet F":
 			var explosion = Explosion.instance()
 			explosion.position = position
 			explosion.get_node("Sprite").playing = true
 			get_node("/root/Game/Explosions").add_child(explosion)
 			if c.name == "Player":
 				Player.change_health(-damage)
-		queue_free()
+			queue_free()
 	
 	if position.y < -10:
 		queue_free()
